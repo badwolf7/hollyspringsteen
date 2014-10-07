@@ -1,6 +1,7 @@
 # hollyspringsteen.com
 ### Holly Springsteen
-[hollyspringsteen.com](http://104.131.66.14/hspringsteen/)
+[production](http://104.131.66.14/)
+[staging](http://104.131.80.29/)
 
 ## New Server Procedure
 ### Create Server
@@ -96,6 +97,6 @@ In a New Terminal Window
 #### 2. Add & Commit
     $ git add -A
     $ git commit -m "commit message"
-#### 3. Add Remote
+#### 3. Add Remote & Push to Server
     $ git remote add {repoName} ssh://{username}@{IPAddress}/var/repos/{repoName}.git
     $ git push {repoName} master
