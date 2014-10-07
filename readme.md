@@ -1,7 +1,8 @@
 # hollyspringsteen.com
 ### Holly Springsteen
-[production](http://104.131.66.14/)
-[staging](http://104.131.80.29/)
+- [production](http://104.131.66.14/)
+
+- [staging](http://104.131.80.29/)
 
 ## New Server Procedure
 ### Create Server
