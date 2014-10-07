@@ -61,3 +61,40 @@
 - copy all contents
     * Add the SSH Key to your Github account under the Account Settings
 
+#### 6. SSH into Github for Verification
+    $ ssh git@github.com
+
+### Initialize Hooks
+#### 1. Change Ownership of directory & Remove Default Files
+    $ sudo chown {username} /var/www/
+    $ rm /var/www/index.html
+#### 2. Create repos/
+    $ cd /var/
+    $ sudo mkdir repos
+    $ sudo chown {username} repos
+    $ cd repos/
+#### 3. Create '.git' folder for /repos
+    $ mkdir {repoName}.git
+    $ cd {repoName}.git/
+#### 4. Initialize git --bare & Access hooks/
+    $ git init --bare
+    $ cd hooks/
+#### 5. Create Executable file
+    $ pico post-receive
+        * Inside File
+            #!/bin/sh
+            GIT_WORK_TREE=/var/www git checkout -f
+    $ chmod +x post-receive
+
+### Push Files to Server
+#### 1. Go to File Location & Initialize git
+- New Terminal Window
+    $ cd {file/path/}
+    $ git init
+
+#### 2. Add & Commit
+    $ git add -A
+    $ git commit -m "commit message"
+#### 3. Add Remote
+    $ git remote add {repoName} ssh://{username}@{IPAddress}/var/repos/{repoName}.git
+    $ git push {repoName} master
