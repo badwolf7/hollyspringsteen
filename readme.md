@@ -88,7 +88,7 @@
 
 ### Push Files to Server
 #### 1. Go to File Location & Initialize git
-- New Terminal Window
+In a New Terminal Window
     $ cd {file/path/}
     $ git init
 
