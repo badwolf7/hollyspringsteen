@@ -4,7 +4,7 @@
 
 - [staging](http://104.131.80.29/)
 
-![screenshot](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![screenshot](https://farm3.staticflickr.com/2948/15474757755_065d708842_c.jpg "hollyspringsteen screenshot")
 
 ## New Server Procedure
 ### Create Server
