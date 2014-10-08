@@ -4,6 +4,8 @@
 
 - [staging](http://104.131.80.29/)
 
+![screenshot](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 ## New Server Procedure
 ### Create Server
 #### 1. SSH Into The Server
@@ -101,3 +103,15 @@ In a New Terminal Window
 #### 3. Add Remote & Push to Server
     $ git remote add {repoName} ssh://{username}@{IPAddress}/var/repos/{repoName}.git
     $ git push {repoName} master
+
+## Merge Dev Branch With Master
+### Basic Branching
+To create a branch and switch to it at the same time you can run the <code>git checkout</code> command with the <code>-b</code> switch.
+    $ git checkout -b {branchName}
+
+This is shorthand for:
+    $ git branch {branchName}
+    $ git checkout {branchName}
+
+Use <code>git checkout</code> for viewing a branch
+
