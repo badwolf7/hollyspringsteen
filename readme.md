@@ -107,11 +107,117 @@ In a New Terminal Window
 ## Merge Dev Branch With Master
 ### Basic Branching
 To create a branch and switch to it at the same time you can run the <code>git checkout</code> command with the <code>-b</code> switch.
+
     $ git checkout -b {branchName}
 
 This is shorthand for:
+
     $ git branch {branchName}
     $ git checkout {branchName}
 
-Use <code>git checkout</code> for viewing a branch
+1. Use <code>git checkout</code> for viewing a branch
+
+    $ git checkout master
+    Switched to branch 'master'
+
+2. Set up <code>hotfix</code> branch
+
+    $ git checkout -b hotfix
+    Switched to a new branch 'hotfix'
+    $ git commit -m "commit message"
+
+3. Merge your <code>hotfix</code> with master
+
+    $ git checkout master
+    $ git merge hotfix
+
+4. Delete <code>hotfix</code>
+
+    $ git checkout {branchName}
+    Switched to branch {branchName}
+    $ git commit -m "commit message"
+
+### Basic Merging
+1. Once changes are complete merge your branch with <code>master</code> by using the <code>git merge</code> command.
+
+    $ git checkout master
+    $ git merge {branchName}
+
+2. If your branch <code>{branchName}</code> is no longer needed it can be removed.
+
+    $ git branch -d {branchName}
+
+### Basic Merge Conflicts
+If you changed the same part of a file in seperate branches Git won't be able to merge cleanly.
+
+For Example:
+
+    $ git merge {branchName}
+    Auto-merging index.html
+    CONFLICT (content): Merge conflict in index.html
+    Automatic merge failed; fix conflicts and then commit the result.
+
+To check which files are unmerged run <code>git status</code>
+
+    $ git status
+    On branch master
+    You have unmerged paths.
+      (fix conflicts and run "git commit")
+
+    Unmerged paths:
+      (use "git add <file>..." to mark resolution)
+
+            both modified:      index.html
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+Anything that has merge conflicts is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts so you can open them manually and resolve the conflicts.
+
+For Example:
+
+    <<<<<<< HEAD
+    <footer>contact : email.support@github.com</footer>
+    =======
+    <footer>
+      please contact us at support@github.com
+    </footer>
+    >>>>>>> {branchName}
+
+Everything above the <code>=======</code> is from the master whereas everything below is from the {branchName}. 
+
+Change code to leave only the desired code
+    <footer>
+      please contact us at support@github.com
+    </footer>
+    
+Run <code>git add</code> on files updated.
+
+===== or =====
+
+Use the graphical tool to resolve the issues by running <code>git mergetool</code>.
+
+    $ git mergetool
+
+    This message is displayed because 'merge.tool' is not configured.
+    See 'git mergetool --tool-help' or 'git help config' for more details.
+    'git mergetool' will now attempt to use one of the following tools:
+    opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc3 codecompare vimdiff emerge
+    Merging:
+    index.html
+
+    Normal merge conflict for 'index.html':
+      {local}: modified file
+      {remote}: modified file
+    Hit return to start merge resolution tool (opendiff):
+
+Verify all conflicts have been resolved
+
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
+
+            modified:   index.html
+
+If all changes are accurate then finalize the merge commit with <code>git commit</code>
 
