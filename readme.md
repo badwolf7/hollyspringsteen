@@ -9,8 +9,10 @@
 ## New Server Procedure
 ### Create Server
 #### 1. SSH Into The Server
+```
     $ ssh root@Server_IP_Address
     enter password
+```
 #### 2. Create Non-Root User
     $ sudo adduser {username}
     $ sudo adduser {username} sudo
