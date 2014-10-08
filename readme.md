@@ -4,7 +4,7 @@
 
 - [staging](http://104.131.80.29/)
 
-![screenshot](https://farm3.staticflickr.com/2948/15474757755_065d708842_c.jpg "hollyspringsteen screenshot")
+<a href="https://www.flickr.com/photos/hitomizu/15474757755" title="hollyspringsteen.com - Home by Holly Springsteen, on Flickr"><img src="https://farm3.staticflickr.com/2948/15474757755_065d708842_m.jpg" width="191" height="240" alt="hollyspringsteen.com - Home"></a>
 
 ## New Server Procedure
 ### Create Server
