@@ -1,0 +1,25 @@
+{
+	"name": "hspringsteen",
+	"version": "1.1.1",
+	"authors": [
+		{
+			"name": "Holly Springsteen",
+			"title": "Creative Director",
+			"title": "Full Stack Developer",
+			"title": "Graphic Designer",
+			"title": "Photographer",
+			"email": "hhspringsteen@gmail.com"
+		}
+	],
+	"dependencies": {
+		"async": "*",
+		"ejs": "*",
+		"express": "3.4.7",
+		"ejs-locals": "*"
+	},
+	"devDependencies": {
+		"mocha": "1.15.1",
+		"should": "2.1.1",
+		"supertest": "0.8.2"
+	}
+}

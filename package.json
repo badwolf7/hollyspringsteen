@@ -1,0 +1,21 @@
+{
+  "name": "hollyspringsteen",
+  "version": "1.1.1",
+  "authors": [
+    {
+      "name": "Holly Springsteen",
+      "title": "Creative Director",
+      "title": "Full Stack Developer",
+      "title": "Graphic Designer",
+      "title": "Photographer",
+      "email": "hhspringsteen@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "grunt-cli": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "*"
+  }
+}
