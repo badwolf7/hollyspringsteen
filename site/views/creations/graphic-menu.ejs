@@ -1,0 +1,72 @@
+<% layout('../templates/layout') -%>
+
+<main id="graphicMenu" class="creationsMenu">
+	<section class="projectSort">
+		<h2 class="col-md-10">Graphic Projects</h2>
+		<!-- <form role="form" class="col-md-2">
+			<select class="form-control">
+				<option selected>Most Recent</option>
+				<option>Alphabetical</option>
+			</select>
+		</form> -->
+	</section>
+	<section class="projects col-xs-12">
+		<% for(var i=0;i<creations.length;i++){ %>
+			<% if(creations[i].section == 'graphic'){ %>
+			<article id="<%= creations[i].name %>" class="col-xs-12" style="border-top: 20px solid <%= creations[i].colors[0] %>;">
+				<div class="imgContainer col-md-7">
+					<a href="/creations/project?p=<%= creations[i].name %>"><img src="<%= creations[i].images.medium %>"></a>
+				</div>
+				<div class="projectSummary col-md-5">
+					<h3><a href="/creations/project?p=<%= creations[i].name %>"><%= creations[i].name %><br><small><%= creations[i].type %></small></a></h3>
+					<h4><a href="/creations/project?p=<%= creations[i].name %>"><%= creations[i].url %></a></h4>
+					<a href="/creations/project?p=<%= creations[i].name %>" class="btn btn-primary col-xs-12">View Project</a>
+					<div class="programs col-xs-12 text-center">
+						<ul>
+							<% for(var j=0;j<creations[i].programs.length;j++){ %>
+							<li>
+								<img src="http://res.cloudinary.com/hollyspringsteen/image/upload/v1419733026/<%= creations[i].programs[j] %>.png" height="75">
+							</li>
+							<% } %>
+						</ul>
+					</div>
+					<div class="camera col-xs-12 text-center">
+						<% if(creations[i].camera.make){ %>
+						<img src="<%= creations[i].camera.icon %>" alt="<%= creations[i].camera.make %> <%= creations[i].camera.model %>">
+						<h5><%= creations[i].camera.make %> <%= creations[i].camera.model %></h5>
+						<h6><%= creations[i].camera.lens %></h6>
+						<ul class="col-xs-12">
+							<li class="aperture col-sm-6">
+								<span class="img"></span>
+								<span class="str"><%= creations[i].camera.aperture %></span>
+							</li>
+							<li class="focal-length col-sm-6">
+								<span class="img"></span>
+								<span class="str"><%= creations[i].camera.focalLength %></span>
+							</li>
+							<li class="exposure-time col-sm-6">
+								<span class="img"></span>
+								<span class="str"><%= creations[i].camera.exposureTime %></span>
+							</li>
+							<li class="iso col-sm-6">
+								<span class="img"></span>
+								<span class="str"><%= creations[i].camera.iso %></span>
+							</li>
+							<li class="flash col-sm-6">
+								<span class="img"></span>
+								<span class="str"><%= creations[i].camera.flash %></span>
+							</li>
+						</ul>
+						<% } %>
+					</div>
+					<p>
+						<%= creations[i].position %>
+						<br><br>
+						<%= creations[i].description %>
+					</p>
+				</div>
+			</article>
+			<% } %>
+		<% } %>
+	</section>
+</main>

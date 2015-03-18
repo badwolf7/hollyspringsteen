@@ -1,148 +1,43 @@
-<% layout('../layout') -%>
-<div id="headerPush"></div>
-<main id="webMenu">
+<% layout('../templates/layout') -%>
+
+<main id="webMenu" class="creationsMenu">
 	<section class="projectSort">
 		<h2 class="col-md-10">Web Projects</h2>
-		<form role="form" class="col-md-2">
+		<!-- <form role="form" class="col-md-2">
 			<select class="form-control">
 				<option selected>Most Recent</option>
 				<option>Alphabetical</option>
 			</select>
-		</form>
+		</form> -->
 	</section>
 	<section class="projects col-xs-12">
-		<article id="portlight" class="col-xs-12">
-			<div class="imgContainer col-md-7">
-				<img src="/assets/images/web/portlight_th.jpg">
-			</div>
-			<div class="projectSummary col-md-5">
-				<h3>Portlight<br><small>Online Retailer</small></h3>
-				<h4><a href="http://www.goportlight.com/">www.goportlight.com</a></h4>
-				<button class="btn btn-primary col-xs-12" type="button">View Project</button>
-				<div class="codeDependencies col-xs-12 text-center">
-					<ul>
-						<li>
-							<img src="/assets/images/logos/html5.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/css3.gif">
-						</li>
-						<li>
-							<img src="/assets/images/logos/sass.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/js.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/node.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/express.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/mongodb.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/mysql.png">
-						</li>
-					</ul>
+		<% for(var i=0;i<creations.length;i++){ %>
+			<% if(creations[i].section == 'web'){ %>
+			<article id="<%= creations[i].name %>" class="col-xs-12" style="border-top: 20px solid <%= creations[i].colors[0] %>;">
+				<div class="imgContainer col-xs-12 col-md-7">
+					<a href="/creations/project?p=<%= creations[i].name %>"><img src="<%= creations[i].images.medium %>"></a>
 				</div>
-				<p>
-					Worked as the Creative Director for Portlight, LLC. where I directed and developed their E-Commerce Website.
-					<br><br>
-					At Portlight, we are dedicated to our partners' e and m-commerce potential and improving the shopping experience for customers around the world.
-				</p>
-			</div>
-		</article>
-		<article id="quire" class="col-xs-12">
-			<div class="imgContainer col-md-7">
-				<img src="/assets/images/web/quireBlog_th.jpg">
-			</div>
-			<div class="projectSummary col-md-5">
-				<h3>Quire Blog<br><small>Simple Blog Site</small></h3>
-				<!-- <h4><a href="http://www.goportlight.com/">www.goportlight.com</a></h4> -->
-				<button class="btn btn-primary col-xs-12" type="button">View Project</button>
-				<div class="codeDependencies col-xs-12 text-center">
-					<ul>
-						<li>
-							<img src="/assets/images/logos/html5.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/css3.gif">
-						</li>
-						<li>
-							<img src="/assets/images/logos/sass.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/js.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/node.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/express.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/mongodb.png">
-						</li>
-					</ul>
+				<div class="projectSummary col-xs-12 col-md-5">
+					<h3><a href="/creations/project?p=<%= creations[i].name %>"><%= creations[i].name %><br><small><%= creations[i].type %></small></a></h3>
+					<h4><a href="/creations/project?p=<%= creations[i].name %>"><%= creations[i].url %></a></h4>
+					<a href="/creations/project?p=<%= creations[i].name %>" class="btn btn-primary col-xs-12">View Project</a>
+					<div class="codeDependencies col-xs-12 text-center">
+						<ul>
+							<% for(var j=0;j<creations[i].languages.length;j++){ %>
+							<li>
+								<img src="http://res.cloudinary.com/hollyspringsteen/image/upload/v1419733026/<%= creations[i].languages[j] %>.png">
+							</li>
+							<% } %>
+						</ul>
+					</div>
+					<p>
+						<%= creations[i].position %>
+						<br><br>
+						<%= creations[i].description %>
+					</p>
 				</div>
-			</div>
-		</article>
-		<article id="hollyDev" class="col-xs-12">
-			<div class="imgContainer col-md-7">
-				<img src="/assets/images/web/hollyDev_th.jpg">
-			</div>
-			<div class="projectSummary col-md-5">
-				<h3>Holly Dev<br><small>A study in Rich Media Optimization</small></h3>
-				<!-- <h4><a href="http://www.goportlight.com/">www.goportlight.com</a></h4> -->
-				<button class="btn btn-primary col-xs-12" type="button">View Project</button>
-				<div class="codeDependencies col-xs-12 text-center">
-					<ul>
-						<li>
-							<img src="/assets/images/logos/html5.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/css3.gif">
-						</li>
-						<li>
-							<img src="/assets/images/logos/sass.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/js.png">
-						</li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article id="orchidAcademy" class="col-xs-12">
-			<div class="imgContainer col-md-7">
-				<img src="/assets/images/web/orchidAcademy_th.jpg">
-			</div>
-			<div class="projectSummary col-md-5">
-				<h3>The Orchid Academy<br><small>Online Classes</small></h3>
-				<!-- <h4><a href="http://www.goportlight.com/">www.goportlight.com</a></h4> -->
-				<button class="btn btn-primary col-xs-12" type="button">View Project</button>
-				<div class="codeDependencies col-xs-12 text-center">
-					<ul>
-						<li>
-							<img src="/assets/images/logos/html5.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/css3.gif">
-						</li>
-						<li>
-							<img src="/assets/images/logos/sass.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/js.png">
-						</li>
-						<li>
-							<img src="/assets/images/logos/actionscript.png">
-						</li>
-					</ul>
-				</div>
-			</div>
-		</article>
+			</article>
+			<% } %>
+		<% } %>
 	</section>
 </main>

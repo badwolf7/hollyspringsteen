@@ -1,0 +1,40 @@
+<% layout('templates/layout') -%>
+
+<main id="contact" class="contact col-xs-12">
+	
+	<section>
+		<article class="col-md-4">
+			<address>
+				184 Wind Chime Court, Suite 101<br>
+				Raleigh, NC
+			</address>
+			<p class="fa fa-phone"> (919)482-8322<br><br>
+			<i class="fa fa-envelope-o"></i> <a href="mailto:springsteen@springsteenlawoffice.com">springsteen@springsteenlawoffice.com</a></p>
+		</article>
+		<form method="POST" role="form" class="form col-md-8">
+			<ol>
+				<li>
+					<label for="contact_name">Name:</label>
+					<input type="text" id="contact_name" class="form-control" name="name" placeholder="Full Name">
+				</li>
+				<li>
+					<label for="contact_email">Email:</label>
+					<input type="email" id="contact_email" class="form-control" name="email" placeholder="example@web.com">
+				</li>
+				<li>
+					<label for="contact_subj">Subject:</label>
+					<input type="text" id="contact_subj" class="form-control" name="subject" placeholder="Why are you contacting us?">
+				</li>
+				<li>
+					<label for="contact_msg">Message:</label>
+					<textarea id="contact_msg" class="form-control"></textarea>
+				</li>
+			</ol>
+			<button type="button" class="btn btn-default col-md-5 col-md-offset-7">Submit</button>
+		</form>
+	</section>
+	<section>
+		<iframe class="col-xs-12" height="500" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=184%20Wind%20Chime%20Court%20%23101%2C%20Raleigh%2C%20NC%2C%20United%20States&key=AIzaSyD2Y5Ly5eir-2TWnXAOYX1SM_bBOzDJmHo"></iframe>
+	</section>
+
+</main>

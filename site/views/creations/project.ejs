@@ -1,0 +1,76 @@
+<% layout('../templates/layout') -%>
+
+<main class="projectPage">
+	<div class="projectColor" style="background: <%= project[0].colors[0] %>;"></div>
+	<image class="projectImage col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" src="<%= project[0].images.large %>" alt="<%= project[0].name %>">
+	<section class="project col-xs-10 col-xs-offset-1">
+		<h2><%= project[0].name %></h2>
+		<section class="col-md-5 col-xs-12" style="padding-left: 0;">
+			<% if(project[0].languages.length > 0){ %>
+			<article class="codeDependencies col-xs-12">
+				<h3>Languages Used:</h3>
+				<ul>
+					<% for(var i=0;i<project[0].languages.length;i++){ %>
+					<li>
+						<img src="http://res.cloudinary.com/hollyspringsteen/image/upload/v1419733026/<%= project[0].languages[i] %>.png">
+					</li>
+					<% } %>
+				</ul>
+			</article>
+			<% } %>
+			<% if(project[0].programs.length > 0){ %>
+			<article class="codeDependencies col-xs-12">
+				<h3>Programs Used:</h3>
+				<ul>
+					<% for(var j=0;j<project[0].programs.length;j++){ %>
+					<li>
+						<img src="http://res.cloudinary.com/hollyspringsteen/image/upload/v1419733026/<%= project[0].programs[j] %>.png">
+					</li>
+					<% } %>
+				</ul>
+			</article>
+			<% } %>
+		</section>
+		<section class="camera col-md-4 col-md-offset-2 col-xs-12">
+			<% if(project[0].camera.make){ %>
+			<div class="text-center">
+				<img src="<%= project[0].camera.icon %>" alt="<%= project[0].camera.make %> <%= project[0].camera.model %>">
+			</div>
+			<h5 class="text-center"><%= project[0].camera.make %> <%= project[0].camera.model %></h5>
+			<h6 class="text-center"><%= project[0].camera.lens %></h6>
+			<ul class="col-xs-12">
+				<li class="aperture col-sm-6">
+					<span class="img"></span>
+					<span class="str"><%= project[0].camera.aperture %></span>
+				</li>
+				<li class="focal-length col-sm-6">
+					<span class="img"></span>
+					<span class="str"><%= project[0].camera.focalLength %></span>
+				</li>
+				<li class="exposure-time col-sm-6">
+					<span class="img"></span>
+					<span class="str"><%= project[0].camera.exposureTime %></span>
+				</li>
+				<li class="iso col-sm-6">
+					<span class="img"></span>
+					<span class="str"><%= project[0].camera.iso %></span>
+				</li>
+				<li class="flash col-sm-12">
+					<span class="img"></span>
+					<span class="str"><%= project[0].camera.flash %></span>
+				</li>
+			</ul>
+			<% } %>
+		</section>
+		<section class="col-xs-12">
+			<% if(project[0].position != ''){ %>
+			<h3>Position</h3>
+			<p><%= project[0].position %></p>
+			<% } %>
+			<% if(project[0].description != ''){ %>
+			<h3>Description</h3>
+			<p><%= project[0].description %></p>
+			<% } %>
+		</section>
+	</section>
+</main>

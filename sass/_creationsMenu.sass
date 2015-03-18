@@ -1,0 +1,47 @@
+.creationsMenu
+	.projectSort
+		form
+			margin-top: 23px
+			select
+				width: 100%
+				height: 30px
+
+	.projects
+		clear:both
+		padding-top: 20px
+		article
+			overflow: hidden
+			background: #FFF
+			margin-top: 20px
+			box-shadow: 0 2px 4px rgba(22,22,22,.22)
+			padding-top: 5px
+			padding-bottom: 5px
+			border-radius: 2px
+			&:nth-child(1)
+				margin-top: 0
+			.imgContainer
+				height: 400px
+				margin-top: 5px
+				overflow: hidden
+				border-radius: 2px
+				img
+					height: auto
+					width: 100%
+			.programs
+				margin-bottom: 15px
+			.projectSummary
+				a.btn
+					font-size: 1.3em
+					font-weight: 200
+					height: 45px
+					margin: 10px 0 15px
+					background: $teal !important
+					border-color: $teal-dark !important
+					transition: all .5s ease
+					overflow: hidden
+					&:hover
+						background: $teal-dark !important
+						border-color: $teal-darker !important
+			
+			@media(min-width: $md)
+				height: 410px

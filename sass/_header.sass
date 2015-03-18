@@ -1,0 +1,238 @@
+header
+	width: 100%
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 9995
+	color: $white
+	@media(max-width: $md)
+		position: absolute
+	@media(min-width: $md)
+		position: fixed
+	
+	&.upper
+		h1
+			color: $white
+		nav
+			ul
+				li
+					a
+						color: $white
+						&:hover
+							color: $blackText
+							background: #EDD1DE
+					ul
+						li
+							a
+								background: #CCC
+								&:hover
+									color: $blackText
+
+				.creations
+					a
+						color:$white
+						span
+							color:$white
+						&:hover
+							background: $teal-light
+							color: $blackText
+							span
+								color: $blackText
+
+					ul a
+						background: $black
+
+						&:hover
+							background: #2A2A2C
+							color: $white
+
+				.search
+					button
+						color:$white
+						background: none
+
+						&:hover
+							background: #557BCE
+							color: $white
+
+	&.lower
+		background: $white
+		h1
+			color: $blackText
+		nav
+			ul
+				li
+					a
+						color: $blackText
+						&:hover
+							color: $blackText
+							background: $beige
+					ul
+						li
+							a
+								background: #CCC
+								&:hover
+									color: $blackText
+
+				.creations
+					a
+						background: $teal
+						color:$white
+						span
+							color:$white
+						&:hover
+							background: $teal-light
+							color: $blackText
+							span
+								color: $blackText
+
+					ul a
+						background: $black
+
+						&:hover
+							background: #2A2A2C
+							color: $white
+
+				.search
+					button
+						color: $white
+						&.glyphicon-search
+							background: $facebook
+							&:hover
+								background: #557BCE
+						&.glyphicon-arrow-right
+							&:hover
+								background: #FFB984
+
+	h1
+		font-family: $drSugiyama
+		float: left
+		margin-left: 2%
+		cursor: pointer
+	.main-nav
+		ul
+			height: 100%
+			margin: 0
+			list-style: none
+			float: right
+			li
+				height: 100%
+				float:left
+				padding: 0
+				position: relative
+
+				a
+					display: block
+					padding: 26px 30px
+					box-shadow: 1px 0 1px rgba(22,22,22,.1)
+					transition: background .5s ease
+					cursor: pointer
+					font-family: 'Exo', sans-serif
+					font-weight: 100
+					margin: 0
+
+					.dropHidden
+						margin-left: 5px
+
+					&:hover
+						text-decoration: none
+
+				ul
+					visibility: hidden
+					opacity: 0
+					position: absolute
+					top: 100%
+					left: -20px
+					transition: opacity .5s ease
+
+					li
+						float: none
+
+						a
+							float: left
+							clear: left
+							width: 150%
+							margin-left: -20px
+							box-shadow: 0 1px 1px rgba(22,22,22,.4)
+
+				ul:hover, a:hover ~ ul
+					visibility: visible
+					opacity: 1
+
+
+			.creations a
+				font-weight: 500
+
+			.search
+				form
+					input
+						position: fixed
+						top:0
+						padding: 17px 0 17px 15px
+						z-index: -2
+						right: 0
+						transition: width .5s ease, visibility .4s ease
+						width: 0
+						font-size: 1.7em
+						color: $blackText
+						visibility:hidden
+					button
+						border: none
+						outline: none
+						font-size: 1.5em
+						padding: 25px 30px 26px
+						top: 0
+						transition: background .5s ease
+						border-radius: 0 !important
+					.glyphicon
+						display: block
+	.mobile-nav
+		width: 350px
+		position: fixed
+		top: 15px
+		right: -292px
+		transition: all .75s ease
+		.menu-icon
+			background: $teal-dark
+			color: $white
+			cursor: pointer
+			padding: 12px 15px 3px
+		#mobile-nav-slide
+			background: $black
+			padding: 0
+			padding-right: 15px
+			li
+				margin: 5px 0
+				float: left
+				clear:left
+				width: 100%
+				h3
+					margin: 0
+					padding-left: 15px
+				form
+					input, button
+						height: 45px
+						border: none
+						outline: none
+					input
+						border-radius: 0 !important
+						margin-top: 1px
+						color: $blackText !important
+					button
+						border-radius: 0 2px 2px 0 !important
+						border-left: 1px solid #666
+				a
+					display: block
+					padding: 20px 0
+					border-top: 1px solid rgba(22,22,22,.22)
+					border-bottom: 1px solid rgba(22,22,22,.22)
+					background: $white
+					color: $blackText
+					transition: background .5s ease, color .5s ease
+					&:hover
+						background: $black
+						color: $white
+				&.menus
+					margin: 0
+					a
+						padding-left: 15px

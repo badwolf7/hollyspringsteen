@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+	<!-- Title -->
+		<title>Springsteen Law</title>
+
+	<!-- CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/springsteen_law/font-awesome-4.2.0/css/font-awesome.min.css">
+
+	<!-- Favicon -->
+		<link rel="shortcut icon" href="/assets/springsteen_law/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/assets/springsteen_law/images/favicon.ico" type="image/x-icon">
+
+	<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather:300,400,700,900' rel='stylesheet' type='text/css'>
+        
+	<!-- JavaScript -->
+		<script  src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="/assets/springsteen_law/js/modernizr.custom.05501.js"></script>
+		<script src="/assets/springsteen_law/js/selectivizr-min.js"></script>
+		<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="wrapper" class="wrapper">
+			<header class="upper">
+				<a href="/" class="logo">
+					<% include logo %>
+					<h1>Springsteen Law</h1>
+				</a>
+				<button style="visibility:none" type="button" class="btn col-md-2 pull-right" data-toggle="modal" data-target="#login-modal">Login</button>
+				<nav>
+					<ul>
+						<li><a href="/creations/springsteen-law/index">Home</a></li>
+						<li><a href="/creations/springsteen-law/consultation">Consultation</a></li>
+						<li class="dropdown practiceAreas">
+							<a href="/creations/springsteen-law/practice-areas">Practice Areas <span class="caret"></span></a>
+							<ul>
+								<li><a href="/creations/springsteen-law/dui-dwi">DUI / DWI</a></li>
+								<li><a href="/creations/springsteen-law/first-offender">First Offender Programs</a></li>
+								<li><a href="/creations/springsteen-law/immigration">Immigration</a></li>
+								<li><a href="/creations/springsteen-law/expungements">Expungements</a></li>
+								<li><a href="/creations/springsteen-law/traffic">Traffic</a></li>
+							</ul>
+						</li>
+						<li><a href="/creations/springsteen-law/attorneys">Attorneys</a></li>
+						<li><a href="/creations/springsteen-law/contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<%- body %>
+
+		</div> <!-- wrapper -->
+		
+		<footer>
+			<% include logo %>
+			<section class="pull-right text-right">
+				<address>
+					184 Wind Chime Court, Suite 101<br>
+					Raleigh, NC
+				</address>
+				<p><i class="fa fa-phone"></i> (919)482-8322<br><br>
+				<i class="fa fa-envelope-o"></i> <a href="mailto:springsteen@springsteenlawoffice.com">springsteen@springsteenlawoffice.com</a></p>
+			</section>
+		</footer>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="/assets/springsteen_law/css/main.css">
+
+		<!-- JAVASCRIPT -->
+		<script src="/assets/springsteen_law/js/main.js"></script>
+
+	</body>
+</html>
