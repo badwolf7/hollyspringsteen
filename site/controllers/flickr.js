@@ -226,5 +226,12 @@ module.exports = function(){
 			}
 		}
 	});
+
+	app.get('/db/get/flickr', function(req,res){
+		db.flickr.find({"photos.media":"photo"},function(err,photos){
+			if(err) throw err;
+			res.json(photos);
+		});
+	});
 }
 

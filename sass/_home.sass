@@ -104,17 +104,31 @@
 			z-index: -3
 			ul
 				li a
+					//---------- MEASUREMENTS ----------//
+					// BOOTSTRAP
+					// $sm: 750px
+					// $md: 970px
+					// $lg: 1170px
+					float: left
 					position: relative
 					height: 180px
-					border-radius: 2px
+					@media(max-width:$sm)
+						width: 96%
+						margin: 0 2%
+					@media(min-width:$sm) and (max-width:$md)
+						width: 46%
+						margin: 0 2%
+					@media(min-width:$md)
+						width: 21%
+						margin: 0 2%
 					h4
 						transition: background .5s ease
 						position: absolute
 						bottom: 0
+						right: 0
 						display: block
 						width: 90%
 						padding: 8px
-						margin-left: 5%
 			.seeMoreWork
 				float: right
 				font-size: 1.4em

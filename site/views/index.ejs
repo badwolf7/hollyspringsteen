@@ -42,7 +42,7 @@
 					<% for(var i=0;i<creations.length;i++){ %>
 					<% if(creations[i].section == 'web'){ %>
 					<li>
-						<a href="/creations/project?p=<%= creations[i].name %>" class="col-xs-12 col-sm-6 col-md-3" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: 90%;">
+						<a href="/creations/project?p=<%= creations[i].name %>" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: cover;">
 							<h4><%= creations[i].name %></h4>
 						</a>
 					</li>
@@ -56,7 +56,7 @@
 					<% for(var i=0;i<creations.length;i++){ %>
 					<% if(creations[i].section == 'graphic'){ %>
 					<li>
-						<a href="/creations/project?p=<%= creations[i].name %>" class="col-xs-12 col-sm-6 col-md-3" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: 90%;">
+						<a href="/creations/project?p=<%= creations[i].name %>" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: cover;">
 							<h4><%= creations[i].name %></h4>
 						</a>
 					</li>
@@ -70,7 +70,7 @@
 					<% for(var i=0;i<creations.length;i++){ %>
 					<% if(creations[i].section == 'photography'){ %>
 					<li>
-						<a href="/creations/project?p=<%= creations[i].name %>" class="col-xs-12 col-sm-6 col-md-3" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: 90%;">
+						<a href="/creations/project?p=<%= creations[i].name %>" style="background:url(<%= creations[i].images.small %>) no-repeat top center; background-size: cover;">
 							<h4><%= creations[i].name %></h4>
 						</a>
 					</li>
@@ -101,7 +101,14 @@
 							<li>Audition</li>
 						</ul>
 					</li>
-					<li>Photography</li>
+					<li>Photography
+						<ul>
+							<li>Nikon D7000</li>
+							<li>Nikon D3</li>
+							<li>Nikon D2Xs</li>
+							<li>Canon EOS 20D</li>
+						</ul>
+					</li>
 				</ul>
 			</li>
 			<li class="wid wid-frontEnd col-md-3 col-sm-6">

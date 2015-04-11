@@ -5,7 +5,7 @@
 var fs = require("fs");
 var sm = require('sitemap');
 var mongojs = require('mongojs');
-var collections = ['creations'];
+var collections = ['creations','flickr'];
 
 if(process.env.PORT){
 	var db = mongojs('104.131.82.47:27017/hollyspringsteen',collections);
@@ -47,23 +47,35 @@ module.exports = function(){
 		if(req.params.page == 'project'){
 			var projectName = req.query.p;
 			db.creations.find({name:projectName},function(err,project){
-				if(fs.existsSync('views/creations/'+req.params.page+'.ejs')){
-					res.render('creations/'+req.params.page, {message: req.params.id, project:project});
-				}else{
-					console.log(err);
-					res.render('404');
-				}
+				db.flickr.find({"photos.media":"photo"},function(err,photos){
+					if(fs.existsSync('views/creations/'+req.params.page+'.ejs')){
+						res.render('creations/'+req.params.page, {message: req.params.id, project:project, flickr:photos[0].photos});
+					}else{
+						console.log(err);
+						res.render('404');
+					}
+				});
 			});
 		}else{
 			db.creations.find().sort({dateRange:-1, id:1},function(err,creations){
 				if(!err){
-					if(fs.existsSync('views/creations/'+req.params.page+'.ejs')){
-						res.render('creations/'+req.params.page, {message: req.params.id, creations:creations});
-					}else{
-						res.render('404');
-					}
+					db.flickr.find({"photos.media":"photo"},function(err,photos){
+						if(fs.existsSync('views/creations/'+req.params.page+'.ejs')){
+							for(var j=0;j<photos[0].photos.length;j++){
+								console.log(photos[0].photos[j].sizes.sizes.size);
+								if(photos[0].photos[j].sizes.sizes.size.label == 'Medium 800'){
+									console.log(photos[0].photos[j].sizes.sizes.size.url);
+								}
+							}
+							res.render('creations/'+req.params.page, {message: req.params.id, creations:creations, flickr:photos[0].photos});
+						}else{
+							console.log(err);
+							res.render('404');
+						}
+					});
 				}else{
 					console.log(err);
+					res.render('404');
 				}
 			});
 		}
