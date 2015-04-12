@@ -7,11 +7,17 @@
 	padding: 25px 0 0 15px
 	min-height: 500px
 	form
+		float: left
+		clear: both
+		width: 100%
 		input
 			border: none
 			outline: none
 			padding: 5px
 			background-image: none !important
+			appearance:none
+			webkit-appearance: none
+			border-radius: 2px
 			&[type=password]
 				color: $blackText
 		button
@@ -20,6 +26,11 @@
 			opacity: 0
 		&.loginPass
 			display: none
-	p:last-child
-		margin-bottom: 0
-		padding-bottom: 15px
+	p
+		margin-top: 8px
+		width: 100%
+		:last-child
+			margin-bottom: 0
+			padding-bottom: 15px
+	.msgs
+		margin-top: 4px

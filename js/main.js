@@ -24,7 +24,7 @@ window.onload = function(){
 		$(pshowListItems).show();
 	}
 	if($('main').hasClass('loginPage')){
-		$('footer').css({'margin-top':'0px'});
+		$('footer').css({'margin-top':'-15px'});
 	}
 	/////////////////////////////////// SOCIAL
 	//////////////////////////////////////////

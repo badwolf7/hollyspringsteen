@@ -5,11 +5,13 @@
     {
       "name": "Holly Springsteen",
       "title": "Web Designer/Developer, Graphic Designer, Photographer",
-      "email": "hhspringsteen@gmail.com"
+      "email": "hhspringsteen@gmail.com",
+      "site": "hollyspringsteen.com"
     }
   ],
   "dependencies": {
     "async": "*",
+    "body-parser": "^1.12.2",
     "cluster": "^0.7.7",
     "ejs": "*",
     "ejs-locals": "*",

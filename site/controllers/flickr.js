@@ -11,7 +11,7 @@ var flickr_data = {
 	frob: '',
 	token: '',
 	secret: '55d0a2ef697e57c7'
-}
+};
 var keys = {"api_key":flickr_data.key};
 var flickr = new Flickr(keys);
 // My Flickr profile
@@ -211,7 +211,7 @@ module.exports = function(){
 		exifLoop();
 	});
 	app.get('/flickr/display/profile', function(req,res){
-		if(hitomizu.temp.photo != undefined){
+		if(hitomizu.temp.photo !== undefined){
 			if(hitomizu.photos.length == hitomizu.temp.photo.length){
 				console.log('');
 				console.log('');
@@ -233,5 +233,5 @@ module.exports = function(){
 			res.json(photos);
 		});
 	});
-}
+};
 
