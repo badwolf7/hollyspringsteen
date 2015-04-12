@@ -1,0 +1,20 @@
+<% layout('templates/layout') -%>
+				
+<main id="loginPage" class="loginPage">
+	<section>
+		<form method="POST" role="form" class="loginUser">
+			<label>username: 
+				<input type="text" name="user" autofocus>
+			</lablel>
+			<button type="submit">Submit</button>
+		</form>
+		<form method="POST" role="form" class="loginPass" name="password">
+			<label>password: 
+				<input type="password">
+			</label>
+			<button type="submit">Submit</button>
+		</form>
+	</section>
+	<section class="msgs">
+	</section>
+</main>

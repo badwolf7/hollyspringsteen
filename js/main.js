@@ -1,4 +1,5 @@
 window.onload = function(){
+
 	if($('main').hasClass('home')){
 		$('#headerPush').css({
 			'display':'none'
@@ -22,6 +23,9 @@ window.onload = function(){
 		$(gshowListItems).show();
 		$(pshowListItems).show();
 	}
+	if($('main').hasClass('loginPage')){
+		$('footer').css({'margin-top':'0px'});
+	}
 	/////////////////////////////////// SOCIAL
 	//////////////////////////////////////////
 	$('.fa-google-plus').click(function(){
@@ -34,7 +38,7 @@ window.onload = function(){
 		window.open('https://www.flickr.com/photos/hitomizu');
 	});
 	$('.fa-instagram').click(function(){
-		window.open('http://instagram.com/raris13');
+		window.open('http://instagram.com/hollyos7');
 	});
 	$('.fa-linkedin').click(function(){
 		window.open('http://www.linkedin.com/in/hhspringsteen/');

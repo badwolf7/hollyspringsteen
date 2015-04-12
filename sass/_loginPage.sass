@@ -1,0 +1,25 @@
+#loginPage, #loginPage p, #loginPage form input, #loginPage form input:hover, #loginPage form input:focus
+	background: $blackText
+	color: #36DC36
+	font-family: $mono !important
+
+#loginPage
+	padding: 25px 0 0 15px
+	min-height: 500px
+	form
+		input
+			border: none
+			outline: none
+			padding: 5px
+			background-image: none !important
+			&[type=password]
+				color: $blackText
+		button
+			height: 25px
+			visibility: hidden
+			opacity: 0
+		&.loginPass
+			display: none
+	p:last-child
+		margin-bottom: 0
+		padding-bottom: 15px
