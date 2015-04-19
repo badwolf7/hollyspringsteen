@@ -1,4 +1,4 @@
-window.onload = function(){
+$(function(){
 
 	if($('main').hasClass('home')){
 		$('#headerPush').css({
@@ -52,7 +52,7 @@ window.onload = function(){
 	//////////////////////////////////////////
 	// Let's the user know to scroll down for more, useful for shorter screens
 	function scrollHint(){
-		if ($(window).scrollTop() == 0){
+		if ($(window).scrollTop() === 0){
 			var scrollHont = setTimeout(function(){
 				$('.scroll-hint').css({
 					'transition':'opacity .5s ease',
@@ -79,7 +79,7 @@ window.onload = function(){
 		if($('main').hasClass('home')){
 			headerColor();
 		}
-	}
+	};
 
 	//////////////////////// HEADER TRANSITION
 	//////////////////////////////////////////
@@ -121,7 +121,7 @@ window.onload = function(){
 		headerShadow();
 		window.onscroll = function(){
 			headerShadow();
-		}
+		};
 	}
 
 	/////////////// PORTFOLIO SECTION SELECTOR
@@ -179,17 +179,17 @@ window.onload = function(){
 	});
 	$('.codeDependencies ul li img').each(function(){
 		var imgHeight = $(this).height(),
-			imgMargin = (65 - imgHeight) / 2 +'px'
+			imgMargin = (65 - imgHeight) / 2 +'px';
 		$(this).css({
 			'margin-top': imgMargin
-		})
+		});
 	});
 
 	//////////////////////// EXPANDING SEARCH
 	/////////////////////////////////////////
 	var expanded = 0;
 	$('.search button').click(function(e){
-		if($(this).attr('type') == 'button'){
+		if($(this).attr('type') === 'button'){
 			e.preventDefault();
 			$('.search input').css({
 				'width':'400px',
@@ -200,7 +200,7 @@ window.onload = function(){
 			$('.search button').prop('type','submit');
 			expanded = 1;
 		}else{
-			if($('.search input').val() == ''){
+			if($('.search input').val() === ''){
 				e.preventDefault();
 				$('.search input').css({
 					'width':'0',
@@ -214,13 +214,13 @@ window.onload = function(){
 		}
 	});
 	$('.search button').hover(function(){
-		if(expanded && $('.search input').val() == ''){
-			$(this).addClass('glyphicon-arrow-right')
+		if(expanded && $('.search input').val() === ''){
+			$(this).addClass('glyphicon-arrow-right');
 			$(this).removeClass('glyphicon-search');
 		}
 	},function(){
 		$(this).addClass('glyphicon-search');
-		$(this).removeClass('glyphicon-arrow-right')
+		$(this).removeClass('glyphicon-arrow-right');
 	});
 	
-};
+});
